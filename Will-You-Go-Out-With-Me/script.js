@@ -173,7 +173,7 @@ const createLetsGoButton = () => {
 };
 
 const positionLetsGoButton = (button) => {
-  button.style.position = "relative";
+  button.style.position = "absolute";
   button.style.left = "65%";
   button.style.top = "65%";
   button.style.transform = "translate(-50%, -50%)";
