@@ -3,7 +3,18 @@ const question = qs(".question");
 const gif = qs(".gif");
 const [yesBtn, noBtn] = [".yes-btn", ".no-btn"].map(qs);
 
-const phrases = [
+const handleYesClick = () => {
+  question.innerHTML = getRandomPhrase();
+  gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+
+  // Remove the 'mouseover' event listener from noBtn
+  noBtn.removeEventListener("mouseover", handleNoMouseOver);
+
+  // Remove the noBtn from the DOM
+  noBtn.remove();
+
+  // Define predefined romantic date ideas
+  const phrases = [
     "Fantastic! Looking forward to it!",
     "Awesome, can't wait!",
     "Super excited! It's going to be great!",
@@ -112,7 +123,6 @@ const locations = [
     "in a wildlife reserve",
     "at a scenic overlook"
 ];
-
 const generateDateIdea = () => {
   const activity = activities[Math.floor(Math.random() * activities.length)];
   const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
@@ -125,28 +135,30 @@ const getRandomPhrase = () => {
     const randomIndex = Math.floor(Math.random() * phrases.length);
     return phrases[randomIndex];
 };
+    
+  // Create and style a new button for Let's Go!
+  const letsGoBtn = document.createElement("button");
+  letsGoBtn.textContent = "Let's Go!";
+  letsGoBtn.classList.add("letsgo-btn"); // You can add a class for styling if needed
+  letsGoBtn.style.position = "absolute";
 
-const handleYesClick = () => {
-  question.innerHTML = getRandomPhrase();
-  question.style.position = "absolute";
-  question.style.left = "50%";
-  question.style.top = "5%";
-  question.style.transform = "translateX(-50%)";
+  // Adjust the left position based on screen width
+  if (window.innerWidth <= 800) {
+    letsGoBtn.style.left = "95%";
+  } else {
+    letsGoBtn.style.left = "63%";
+  }
 
-  gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
-  gif.style.width = "auto";
-  gif.style.height = "auto";
-  gif.style.position = "absolute";
-  gif.style.left = "50%";
-  gif.style.top = "40%";
-  gif.style.transform = "translate(-50%, -50%)";
-  
-    noBtn.removeEventListener("mouseover", handleNoMouseOver);
-  noBtn.remove();
+  letsGoBtn.style.transform = "translate(-50%, -50%)";
+  letsGoBtn.style.width = "200px"; // Adjust the width as needed
 
+  // Add a click event listener to prompt the user with random romantic date ideas
+  letsGoBtn.addEventListener("click", () => {
+        const randomDateIdea = generateDateIdea();
+        alert(`How about this romantic date idea: ${randomDateIdea}`);
+      });
 
-  const letsGoBtn = createLetsGoButton();
-  positionLetsGoButton(letsGoBtn); // Ensure the button is centered
+  // Replace yesBtn with the new letsGoBtn
   yesBtn.replaceWith(letsGoBtn);
 };
 
@@ -154,33 +166,10 @@ const handleNoMouseOver = () => {
   const { width, height } = noBtn.getBoundingClientRect();
   const maxX = window.innerWidth - width;
   const maxY = window.innerHeight - height;
+
   noBtn.style.left = `${Math.floor(Math.random() * maxX)}px`;
   noBtn.style.top = `${Math.floor(Math.random() * maxY)}px`;
 };
-
-const createLetsGoButton = () => {
-  const letsGoBtn = document.createElement("button");
-  letsGoBtn.textContent = "Let's Go!";
-  letsGoBtn.classList.add("letsgo-btn");
-  positionLetsGoButton(letsGoBtn);
-
-  letsGoBtn.addEventListener("click", () => {
-    const randomDateIdea = generateDateIdea();
-    alert(`How about this romantic date idea: ${randomDateIdea}`);
-  });
-
-  return letsGoBtn;
-};
-
-const positionLetsGoButton = (button) => {
-  button.style.position = "absolute";
-  button.style.left = "65%";
-  button.style.top = "68%";
-  button.style.transform = "translate(-50%, -50%)";
-  button.style.width = "200px"; // Adjust the button width as needed
-
-};
-
 
 yesBtn.addEventListener("click", handleYesClick);
 noBtn.addEventListener("mouseover", handleNoMouseOver);
