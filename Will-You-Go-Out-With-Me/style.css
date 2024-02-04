@@ -29,16 +29,14 @@ h2 {
 
 .btn-group {
     width: 100%;
-    height: 50px;
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
 button {
-    position: absolute;
     width: 150px;
-    height: inherit;
+    height: 50px;
     font-size: 1.2em;
     color: white;
     border-radius: 30px;
@@ -46,15 +44,11 @@ button {
     cursor: pointer;
     box-shadow: 0 2px 4px gray;
     border: 2px solid #e94d58;
-}
-
-button:nth-child(1) {
-    margin-left: -200px;
     background: #e94d58;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-button:nth-child(2) {
-    margin-right: -200px;
+button:hover {
     background: white;
     color: #e94d58;
 }
