@@ -52,3 +52,27 @@ button:hover {
     background: white;
     color: #e94d58;
 }
+
+.letsgo-btn {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 50px;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px gray;
+    background: #e94d58;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.letsgo-btn:hover {
+    background: white;
+    color: #e94d58;
+}
+
+
