@@ -72,9 +72,12 @@ button:nth-child(2) {
     }
 
     button {
-        position: static; /* Remove absolute positioning on mobile */
-        margin: 10px 0; /* Add some space between the buttons */
-        width: 80%; /* Adjust the button width for smaller screens */
+        position: relative; /* Change to relative positioning on mobile */
+        margin: 10px auto; /* Add margin and auto for horizontal centering */
+        left: 0; /* Reset left position */
+        right: 0; /* Reset right position */
+        top: 0; /* Reset top position */
         transform: none; /* Remove transform as it's no longer needed */
+        width: 80%; /* Adjust the button width for smaller screens */
     }
 }
