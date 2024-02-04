@@ -130,7 +130,7 @@ const handleYesClick = () => {
   question.innerHTML = getRandomPhrase();
   question.style.position = "absolute"; // Set the question element's position to absolute
   question.style.left = "50%"; // Center it horizontally
-  question.style.top = "25%"; // Set the distance from the top as needed
+  question.style.top = "10%"; // Set the distance from the top as needed
   question.style.transform = "translateX(-50%)"; // Center it exactly in the middle horizontally
 
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
@@ -139,7 +139,7 @@ const handleYesClick = () => {
   // Set the location of the gif by modifying its position
   gif.style.position = "absolute"; // Set the gif position to absolute
   gif.style.left = "50%"; // Center the gif horizontally
-  gif.style.top = "50%"; // Center the gif vertically
+  gif.style.top = "40%"; // Center the gif vertically
   gif.style.transform = "translate(-50%, -50%)"; // Center the gif exactly in the middle
   
     noBtn.removeEventListener("mouseover", handleNoMouseOver);
@@ -177,7 +177,7 @@ const createLetsGoButton = () => {
 const positionLetsGoButton = (button) => {
   button.style.position = "absolute";
   button.style.left = "65%";
-  button.style.top = "75%";
+  button.style.top = "65%";
   button.style.transform = "translate(-50%, -50%)";
   button.style.width = "200px"; // Adjust the button width as needed
 
