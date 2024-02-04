@@ -129,6 +129,7 @@ const getRandomPhrase = () => {
 const handleYesClick = () => {
   question.innerHTML = getRandomPhrase();
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  gif.style.width = "200px"; // Adjust the width as desired
   noBtn.removeEventListener("mouseover", handleNoMouseOver);
   noBtn.remove();
 
