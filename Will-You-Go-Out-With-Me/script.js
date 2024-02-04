@@ -174,8 +174,8 @@ const createLetsGoButton = () => {
 
 const positionLetsGoButton = (button) => {
   button.style.position = "absolute";
-  button.style.left = "65%";
-  button.style.top = "65%";
+  button.style.left = "70%";
+  button.style.top = "70%";
   button.style.transform = "translate(-50%, -50%)";
   button.style.width = "200px"; // Adjust the button width as needed
 
