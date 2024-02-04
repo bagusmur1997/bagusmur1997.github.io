@@ -120,7 +120,7 @@ const handleYesClick = () => {
   const selectedphrases = phrases[randomIndex];
   
   question.innerHTML = selectedphrases;
-  gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  gif.src = "https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif";
   
   // Remove the 'mouseover' event listener from noBtn
   noBtn.removeEventListener("mouseover", handleNoMouseOver);
