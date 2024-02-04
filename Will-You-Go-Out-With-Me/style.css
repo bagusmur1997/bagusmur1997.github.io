@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: whitesmoke;
+    background: rgb(65, 52, 52);
     font-family: 'Leckerli One', cursive;
     font-size: large;
     background-color: rgb(246, 211, 217);
@@ -32,13 +32,14 @@ h2 {
     height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center; /* Added for vertical centering */
+    position: relative; /* Ensure the buttons are positioned relative to this container */
     margin-top: 50px;
 }
 
 button {
     position: absolute;
     width: 150px;
-    height: inherit;
     font-size: 1.2em;
     color: white;
     border-radius: 30px;
@@ -46,15 +47,34 @@ button {
     cursor: pointer;
     box-shadow: 0 2px 4px gray;
     border: 2px solid #e94d58;
+    top: 50%; /* Center the button vertically */
+    transform: translateY(-50%); /* Adjust the button's position to truly center it */
 }
 
 button:nth-child(1) {
-    margin-left: -200px;
     background: #e94d58;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
 }
 
 button:nth-child(2) {
-    margin-right: -200px;
     background: white;
     color: #e94d58;
+    right: 50%;
+    transform: translate(50%, -50%); /* Center the button horizontally and vertically */
+}
+
+/* CSS Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .btn-group {
+        flex-direction: column; /* Stack the buttons vertically on smaller screens */
+        height: auto; /* Adjust height to accommodate stacked buttons */
+    }
+
+    button {
+        position: static; /* Remove absolute positioning on mobile */
+        margin: 10px 0; /* Add some space between the buttons */
+        width: 80%; /* Adjust the button width for smaller screens */
+        transform: none; /* Remove transform as it's no longer needed */
+    }
 }
