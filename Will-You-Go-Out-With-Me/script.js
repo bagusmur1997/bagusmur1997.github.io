@@ -3,6 +3,30 @@ const question = qs(".question");
 const gif = qs(".gif");
 const [yesBtn, noBtn] = [".yes-btn", ".no-btn"].map(qs);
 
+const phrases = [
+    "Fantastic! Looking forward to it!",
+    "Awesome, can't wait!",
+    "Super excited! It's going to be great!",
+    "Brilliant! It's going to be so much fun!",
+    "Great! See you soon!",
+    "Yay! Can't wait to see you!",
+    "Excellent! It's going to be a blast!",
+    "Woo-hoo! Ready for an amazing time!",
+    "Amazing! Counting down the hours!",
+    "Perfect! Plans sound wonderful!",
+    "Incredible! It's going to be unforgettable!",
+    "Exciting! Adventure awaits!",
+    "Terrific! It's going to be full of joy!",
+    "Outstanding! Eagerly awaiting it!",
+    "Splendid! Can't wait for what's next!",
+    "Phenomenal! The activities sound fantastic!",
+    "Magnificent! Plans are spot-on!",
+    "Thrilling! Get ready for a thrill ride!",
+    "Delightful! Looking forward to the joy!",
+    "Impressive! It's going to be impressive!",
+    "Epic! Get ready for an epic experience!"
+];
+
 const activities = [
     "Cook", 
     "Go for a walk", 
@@ -18,8 +42,19 @@ const activities = [
     "Go kayaking", 
     "Attend a cooking class", 
     "Go hiking", 
-    "Visit an art gallery"
+    "Visit an art gallery",
+    "Try rock climbing",
+    "Join a yoga session",
+    "Attend a live theater show",
+    "Explore local street markets",
+    "Go on a road trip",
+    "Try horseback riding",
+    "Participate in a workshop",
+    "Go swimming",
+    "Take a scenic drive",
+    "Visit an amusement park"
 ];
+
 
 const adjectives = [
     "romantic", 
@@ -36,8 +71,19 @@ const adjectives = [
     "cultural", 
     "historic", 
     "breathtaking", 
-    "magical"
+    "magical",
+    "serene",
+    "enchanting",
+    "lively",
+    "tranquil",
+    "charming",
+    "sophisticated",
+    "rustic",
+    "elegant",
+    "vibrant",
+    "picturesque"
 ];
+
 
 const locations = [
     "on the beach", 
@@ -54,7 +100,17 @@ const locations = [
     "on a rooftop", 
     "in a botanical garden", 
     "on a boat", 
-    "in a charming village"
+    "in a charming village",
+    "at a resort",
+    "in a historic town",
+    "at a luxury hotel",
+    "on a secluded island",
+    "in a bustling city center",
+    "in a quaint countryside",
+    "on a desert oasis",
+    "at an observatory",
+    "in a wildlife reserve",
+    "at a scenic overlook"
 ];
 
 const generateDateIdea = () => {
@@ -65,8 +121,13 @@ const generateDateIdea = () => {
   return `${activity} a ${adjective} evening ${location}`;
 };
 
+const getRandomPhrase = () => {
+    const randomIndex = Math.floor(Math.random() * phrases.length);
+    return phrases[randomIndex];
+};
+
 const handleYesClick = () => {
-  question.innerHTML = "Yeahhhhhhhhhhh! See you tomorrow!!";
+  question.innerHTML = getRandomPhrase();
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
   noBtn.removeEventListener("mouseover", handleNoMouseOver);
   noBtn.remove();
