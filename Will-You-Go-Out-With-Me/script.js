@@ -129,10 +129,13 @@ const getRandomPhrase = () => {
 const handleYesClick = () => {
   question.innerHTML = getRandomPhrase();
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  gif.style.width = "auto"; // Adjust the gif size as needed
+  gif.style.height = "auto"; // Maintain aspect ratio
   noBtn.removeEventListener("mouseover", handleNoMouseOver);
   noBtn.remove();
 
   const letsGoBtn = createLetsGoButton();
+  positionLetsGoButton(letsGoBtn); // Ensure the button is centered
   yesBtn.replaceWith(letsGoBtn);
 };
 
@@ -159,12 +162,13 @@ const createLetsGoButton = () => {
 };
 
 const positionLetsGoButton = (button) => {
-  button.style.position = "fixed";
-  button.style.left = "50%";
-  button.style.top = "50%";
+  button.style.position = "auto";
+  button.style.left = "66%";
+  button.style.top = "75%";
   button.style.transform = "translate(-50%, -50%)";
-  button.style.width = "200px";
+  button.style.width = "200px"; // Adjust the button width as needed
 };
+
 
 yesBtn.addEventListener("click", handleYesClick);
 noBtn.addEventListener("mouseover", handleNoMouseOver);
