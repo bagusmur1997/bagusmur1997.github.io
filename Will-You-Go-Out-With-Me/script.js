@@ -159,7 +159,7 @@ const createLetsGoButton = () => {
 };
 
 const positionLetsGoButton = (button) => {
-  button.style.position = "absolute";
+  button.style.position = "fixed";
   button.style.left = "50%";
   button.style.top = "50%";
   button.style.transform = "translate(-50%, -50%)";
