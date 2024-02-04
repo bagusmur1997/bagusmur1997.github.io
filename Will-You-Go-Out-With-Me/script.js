@@ -129,7 +129,6 @@ const getRandomPhrase = () => {
 const handleYesClick = () => {
   question.innerHTML = getRandomPhrase();
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
-  gif.style.width = "200px"; // Adjust the width as desired
   noBtn.removeEventListener("mouseover", handleNoMouseOver);
   noBtn.remove();
 
@@ -160,7 +159,7 @@ const createLetsGoButton = () => {
 };
 
 const positionLetsGoButton = (button) => {
-  button.style.position = "fixed";
+  button.style.position = "absolute";
   button.style.left = "50%";
   button.style.top = "50%";
   button.style.transform = "translate(-50%, -50%)";
